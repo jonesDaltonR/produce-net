@@ -5,8 +5,9 @@
 .sidenav {
   width: 200px;
 
-  .sidenav .mat-toolbar {
-    background: inherit;
+  .mat-toolbar {
+    background-color:#673ab7;
+    color:white;
   }
 }
 
@@ -15,11 +16,34 @@
   top: 0;
   z-index: 1;
 }
-.header-list{
-  display: inline;
-  list-style-type: none;
-  height: 100%;
-  li{
-    
+
+.spacer{
+  flex:1 1 auto;
+}
+
+mat-icon{
+  height: 30px;
+  width:30px;
+}
+.material-icons{
+  font-size: 30px;
+}
+.nav-top{
+  height: 80px;
+  font-size: 2em;
+}
+.nav-under{
+  height: 40px;
+  background-color: #5c33bd;
+  a{
+    display: inline-block;
+    margin: 0 10px;
+    color:white;
+    text-decoration: none;
+    box-sizing: border-box;
+    padding: 4px; 
+  }
+  a:hover{
+    background-color: lighten($color:#5c33bd, $amount: 10);
   }
 }
