@@ -1,11 +1,12 @@
 <mat-sidenav-container class="sidenav-container">
-  <mat-sidenav 
-      #drawer
-      class="sidenav"
-      fixedInViewport="false"
-      [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
-      [mode]="(isHandset$ | async) ? 'over' : 'side'"
-      [opened]="false">
+  <mat-sidenav
+    #drawer
+    class="sidenav"
+    fixedInViewport="false"
+    [attr.role]="(isHandset$ | async) ? 'dialog' : 'navigation'"
+    [mode]="(isHandset$ | async) ? 'over' : 'side'"
+    [opened]="false"
+  >
     <mat-toolbar>Menu</mat-toolbar>
     <mat-nav-list>
       <a mat-list-item href="#">Home</a>
@@ -16,23 +17,24 @@
   <mat-sidenav-content>
     <mat-toolbar color="primary">
       <mat-toolbar-row class="nav-top">
-          <button
-            type="button"
-            aria-label="Toggle sidenav"
-            mat-icon-button
-            (click)="drawer.toggle()"
-            *ngIf="isHandset$ | async">
-            <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
-          </button>
-          <span>Produce Net</span>
+        <button
+          type="button"
+          aria-label="Toggle sidenav"
+          mat-icon-button
+          (click)="drawer.toggle()"
+          *ngIf="isHandset$ | async"
+        >
+          <mat-icon aria-label="Side nav toggle icon">menu</mat-icon>
+        </button>
+        <span>Produce Net</span>
       </mat-toolbar-row>
       <mat-toolbar-row class="nav-under" *ngIf="!(isHandset$ | async)">
-          <span class="spacer"></span>
-          <div>
-              <a href="#">Home</a>
-              <a href="#">Products</a>
-              <a href="#">About Us</a>
-          </div>
+        <span class="spacer"></span>
+        <div>
+          <a href="#">Home</a>
+          <a href="#">Products</a>
+          <a href="#">About Us</a>
+        </div>
       </mat-toolbar-row>
     </mat-toolbar>
     <!-- Add Content Here -->

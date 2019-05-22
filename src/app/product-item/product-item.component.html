@@ -1,0 +1,71 @@
+<div *ngIf="grid else listView" class="col-md-3 col-sm-6 grid-item">
+		<figure class="card card-product">
+			<div class="img-wrap"><img src="https://via.placeholder.com/220" /></div>
+			<figcaption class="info-wrap">
+				<a href="#" class="title">{{product.name}}</a>
+				<div class="price-wrap">
+					<span class="price-new">{{ product.sale != 0 ? product.price/product.sale : product.price}}</span>
+					<del *ngIf="product.sale != 0" class="price-old">{{product.price | currency}}</del>
+				</div>
+			</figcaption>
+		</figure>
+</div>
+<ng-template #listView>
+	<article class="card card-product" id="list">
+			<div class="card-body">
+				<div class="row">
+					<aside class="col-sm-3">
+						<div class="img-wrap">
+							<img src="https://via.placeholder.com/220" />
+						</div>
+					</aside>
+					<article class="col-sm-6">
+						<h4 class="title">{{product.name}}</h4>
+						<div class="rating-wrap  mb-2">
+							<ul class="rating-stars">
+								<li style="width:80%" class="stars-active">
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</li>
+								<li>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+									<i class="fa fa-star"></i>
+								</li>
+							</ul>
+							<div class="label-rating">132 reviews</div>
+							<div class="label-rating">154 orders</div>
+						</div>
+						<p>{{product.description}}</p>
+						<dl class="dlist-align">
+							<dt>Category</dt>
+							<dd>{{ product.category }}</dd>
+						</dl>
+					</article>
+					<aside class="col-sm-3 border-left">
+						<div class="action-wrap">
+							<div class="price-wrap h4">
+								<span class="price"> {{ product.sale != 0 ? product.price/product.sale : product.price}} </span>
+								<del *ngIf="product.sale != 0" class="price-old">{{product.price | currency}}</del>
+							</div>
+							<p class="text-success">{{ product.shipping == 0 ? 'Free shipping' : (product.shipping | currency) + ' Shipping and Handling'}}</p>
+							<br />
+							<p>
+								<a href="#" class="btn btn-primary">
+									Add to Cart
+								</a>
+								<a href="#" class="btn btn-secondary">
+									Details
+								</a>
+							</p>
+						</div>
+					</aside>
+				</div>
+			</div>
+		</article>
+</ng-template>

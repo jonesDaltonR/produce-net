@@ -11,6 +11,8 @@ import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material';
 import { MainNavComponent } from './main-nav/main-nav.component';
+import { ProductItemComponent } from './product-item/product-item.component';
+import { ProductListComponent } from './product-list/product-list.component';
 
 
 @NgModule({
@@ -18,7 +20,9 @@ import { MainNavComponent } from './main-nav/main-nav.component';
       AppComponent,
       HeaderComponent,
       FooterComponent,
-      MainNavComponent
+      MainNavComponent,
+      ProductItemComponent,
+      ProductListComponent
    ],
    imports: [
       BrowserModule,
