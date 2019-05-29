@@ -5,14 +5,15 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { Material } from './material';
-import { HeaderComponent } from './header/header.component';
-import { FooterComponent } from './footer/footer.component';
+import { HeaderComponent } from './components/header/header.component';
+import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule } from '@angular/common/http';
 import { LayoutModule } from '@angular/cdk/layout';
 import { MatIconModule } from '@angular/material';
-import { MainNavComponent } from './main-nav/main-nav.component';
-import { ProductItemComponent } from './product-item/product-item.component';
-import { ProductListComponent } from './product-list/product-list.component';
+import { MainNavComponent } from './components/main-nav/main-nav.component';
+import { ProductItemComponent } from './components/product-item/product-item.component';
+import { ProductListComponent } from './components/product-list/product-list.component';
+import { ProductDetailComponent } from './components/product-detail/product-detail.component';
 
 
 @NgModule({
@@ -22,7 +23,8 @@ import { ProductListComponent } from './product-list/product-list.component';
       FooterComponent,
       MainNavComponent,
       ProductItemComponent,
-      ProductListComponent
+		ProductListComponent,
+		ProductDetailComponent
    ],
    imports: [
       BrowserModule,

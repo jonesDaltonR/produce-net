@@ -55,5 +55,5 @@
 	</div>
 
 <div class="row-sm">
-	<product-item *ngFor="let product of productList" [product]="product" [grid]="grid" class="{{ !grid ? 'product-list-item' :''}}"></product-item>
+	<product-item *ngFor="let product of productList" [routerLink]="[ '/detail/', product.id ]" [product]="product" [grid]="grid" class="{{ !grid ? 'product-list-item' :''}}"></product-item>
 </div>

@@ -6,6 +6,7 @@ export class Product {
 
 	// tslint:disable: variable-name
 	constructor(
+		private _id: number,
 		private _name?: string,
 		private _description?: string,
 		private _price?: number,
@@ -16,8 +17,11 @@ export class Product {
 		this._reviews  = [
 			new Review('Test', 5)
 		];
-	 }
+	}
 
+	public get id(): number {
+		return this._id;
+	}
 	public get name(): string {
 		return this._name;
 	}

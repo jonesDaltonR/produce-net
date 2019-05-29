@@ -1,6 +1,6 @@
 import { Component, OnInit, Renderer2 } from '@angular/core';
-import { Product } from '../models/product';
-import { Category } from '../enums/category.enum';
+import { Product } from '../../models/product';
+import { Category } from '../../enums/category.enum';
 
 @Component({
 	selector: 'product-list',
@@ -12,6 +12,7 @@ export class ProductListComponent implements OnInit {
 	private render: Renderer2;
 	productList: Product[] = [
 			new Product(
+				1,
 				'Red Delicious Apple',
 				'A red delicious apple.',
 				2.99,
@@ -20,6 +21,7 @@ export class ProductListComponent implements OnInit {
 				Category.Fruit
 			),
 			new Product(
+				2,
 				'Apple',
 				'A red delicious apple.',
 				2.99,
