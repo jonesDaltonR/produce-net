@@ -4,53 +4,33 @@
 		<div class="col-md-3-24"> <strong>Filter by:</strong> </div> <!-- col.// -->
 		<div class="col-md-19-24"> 
 			<ul class="list-inline">
-					<li class="list-inline-item dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">   Supplier type </a>
-					<div class="dropdown-menu p-3" style="max-width:400px;">	
-						<label class="form-check">
-							<a href="#">
-							<input type="checkbox" class="form-check-input"> Good supplier
-						</a>
-						</label>
-						<label class="form-check">
-							<a href="#">
-							<input type="checkbox" class="form-check-input"> Best supplier
-						</a>
-						</label>
-						<label class="form-check">
-							<a href="#">
-							<input type="checkbox" class="form-check-input"> New supplier
-						</a>
-						</label>
-					</div> <!-- dropdown-menu.// -->
+					<li class="list-inline-item dropdown">
+						<a href="#" class="dropdown-toggle" data-toggle="dropdown" onclick="ModelToggle(this)" id="category-dropdown">   Category </a>
+						<div class="dropdown-menu p-3" style="max-width:400px;" id="category-dropdown-model">
+								<!-- <div *ngFor="let category of Category">
+									<label class="form-check">
+											<a href="#">
+											<input type="checkbox" class="form-check-input"> Good supplier
+										</a>
+									</label>
+								</div>	 -->
+								<label class="form-check">
+									<a href="#">
+									<input type="checkbox" class="form-check-input"> Good supplier
+								</a>
+								</label>
+								<label class="form-check">
+									<a href="#">
+									<input type="checkbox" class="form-check-input"> Best supplier
+								</a>
+								</label>
+								<label class="form-check">
+									<a href="#">
+									<input type="checkbox" class="form-check-input"> New supplier
+								</a>
+								</label>
+						</div> <!-- dropdown-menu.// -->
 					</li>
-					<li class="list-inline-item dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown">  Country </a>
-					<div class="dropdown-menu p-3" style="max-width:400px;">	
-						<label class="form-check">
-							<a href="#">
-							<input type="checkbox" class="form-check-input"> China
-						</a>
-						</label>
-						<label class="form-check">
-							<a href="#">
-							<input type="checkbox" class="form-check-input"> Japan
-						</a>
-						</label>
-						<label class="form-check">
-							<a href="#">
-							<input type="checkbox" class="form-check-input"> Uzbekistan
-						</a>
-						</label>
-						<label class="form-check">
-							<a href="#">
-							<input type="checkbox" class="form-check-input"> Russia
-						</a>
-						</label>
-					</div> <!-- dropdown-menu.// -->
-					</li>
-					<li class="list-inline-item"><a href="#">Product type</a></li>
-					<li class="list-inline-item"><a href="#">Brand name</a></li>
-					<li class="list-inline-item"><a href="#">Color</a></li>
-					<li class="list-inline-item"><a href="#">Size</a></li>
 					<li class="list-inline-item">
 						<div class="form-inline">
 							<label class="mr-2">Price</label>
@@ -63,34 +43,17 @@
 			</ul>
 		</div> <!-- col.// -->
 		<div class="col-md-2-24 list-view-select text-right">
-					<i title="List view" id="btnList" class="fa fa-bars" (click)="grid = false"></i>
-					<i title="Grid view" id="btnGrid" class="fa fa-th" (click)="grid = true"></i>
+				<i title="List view" id="btnList" class="fa fa-bars" (click)="grid = false"></i>
+				<i title="Grid view" id="btnGrid" class="fa fa-th" (click)="grid = true"></i>
 		</div>
 	</div> 
 		</div>
 	</div>
 		
 	<div class="padding-y-sm">
-		<span>3897 results for "Item"</span>	
+		<span>{{ productList.length }} results for "Item"</span>	
 	</div>
 
 <div class="row-sm">
-	<product-item *ngFor="let product of productList" [product]="product" [grid]="grid"></product-item>
+	<product-item *ngFor="let product of productList" [product]="product" [grid]="grid" class="{{ !grid ? 'product-list-item' :''}}"></product-item>
 </div>
-<script type="text/javascript">
-	ShowList();
-	function ShowList(){
-		$('.grid-item').hide();
-		$('#list').show();
-		$('#btnGrid').on('click',function(){
-			ShowGrid();
-		});
-	}
-	function ShowGrid(){
-		$('#list').hide();
-		$('.grid-item').show();
-		$('#btnList').on('click',function(){
-			ShowList();
-		});
-	}
-</script>

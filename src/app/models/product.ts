@@ -1,6 +1,9 @@
 import { Category } from '../enums/category.enum';
+import { Review } from './review';
 
 export class Product {
+	private _reviews: Review[];
+
 	// tslint:disable: variable-name
 	constructor(
 		private _name?: string,
@@ -9,7 +12,11 @@ export class Product {
 		private _sale?: number,
 		private _shipping?: number,
 		private _category?: Category
-	) { }
+	) {
+		this._reviews  = [
+			new Review('Test', 5)
+		];
+	 }
 
 	public get name(): string {
 		return this._name;
@@ -60,4 +67,30 @@ export class Product {
 		this._category = value;
 	}
 
+	public get reviews() {
+		return this._reviews;
+	}
+
+	public AddReview(review: Review) {
+		this._reviews.push(review);
+	}
+
+	public GetReviewCount() {
+		return this._reviews.length;
+	}
+
+	public GetAverageRating() {
+		let val = 0;
+		const count = this.GetReviewCount();
+
+		if (count < 1 || count == null) {
+			return 0;
+		}
+
+		for (const r of this._reviews) {
+			val += r.rating;
+		}
+
+		return Math.floor(val / count);
+	}
 }

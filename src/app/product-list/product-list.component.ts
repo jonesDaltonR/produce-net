@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Renderer2 } from '@angular/core';
 import { Product } from '../models/product';
 import { Category } from '../enums/category.enum';
 
@@ -8,6 +8,8 @@ import { Category } from '../enums/category.enum';
 	styleUrls: ['./product-list.component.scss']
 })
 export class ProductListComponent implements OnInit {
+	Category = Category;
+	private render: Renderer2;
 	productList: Product[] = [
 			new Product(
 				'Red Delicious Apple',

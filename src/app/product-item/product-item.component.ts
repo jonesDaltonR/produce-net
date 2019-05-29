@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Product } from '../models/product';
+import { Category } from '../enums/category.enum';
 
 @Component({
   selector: 'product-item',
@@ -9,6 +10,7 @@ import { Product } from '../models/product';
 export class ProductItemComponent implements OnInit {
 	@Input() grid: boolean;
 	@Input() product: Product;
+	Category = Category;
 
 	constructor() {}
 

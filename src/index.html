@@ -13,5 +13,17 @@
 </head>
 <body>
 	<app-root></app-root>
+	<script type="text/javascript" src="assets/jquery/jquery-2.0.0.min.js"></script>
+	<script type="text/javascript">
+		function ModelToggle(element){
+			window.event.stopPropagation();
+			const id = "#" + element.id+"-model";
+			const elem = $(id).show().focus();
+
+			$(document).click(function(event){
+				$(id).hide();
+			});
+		}
+	</script>
 </body>
 </html>
